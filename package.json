@@ -1,0 +1,21 @@
+{
+  "name": "igme340",
+  "version": "1.0.0",
+  "description": "Starter stream media assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests Complete\""
+  },
+  "author": "Andrew Black",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.30.0"
+  },
+  "dependencies": {
+    "igme340": "file:"
+  }
+}
