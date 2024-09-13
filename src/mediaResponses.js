@@ -1,6 +1,7 @@
 const fs = require('fs'); // pull in the file system module
 const path = require('path');
 
+// function simplifies process of getting byte range positions
 const getRangePositions = (requestHeaders) => {
   let { range } = requestHeaders;
 
@@ -11,6 +12,7 @@ const getRangePositions = (requestHeaders) => {
   return range.replace(/bytes=/, '').split('-');
 };
 
+// function simplifies process of determing the various useful points in the byte ranges
 const calculateRangeValues = (positions, stats) => {
   const total = stats.size;
   let start = parseInt(positions[0], 10);
@@ -30,6 +32,7 @@ const calculateRangeValues = (positions, stats) => {
   };
 };
 
+// main function for loading in a file and determining what to do with it
 const loadFile = (request, response, filDir, mediaName) => {
   const file = path.resolve(__dirname, filDir);
 
